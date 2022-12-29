@@ -4,7 +4,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 function Login() {
   const navigate = useNavigate();
   const [data, setData] = useState({
-    name: "",
+
     email: "",
     password: "",
   });
@@ -17,7 +17,7 @@ function Login() {
 
   const handleSubmit = async (userData) => {
     const body = JSON.stringify(userData);
-    const response = await fetch(`http://localhost:5000/user/`, {
+    const response = await fetch(`http://localhost:5000/user/login`, {
       method: "POST",
       body,
       headers: { "content-type": "application/json" },
